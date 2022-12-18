@@ -30,6 +30,6 @@ struct boundary {
 
 int main(int argc, const char * argv[]) {
     laplacian_solver<boundary> my_lap(5,0,-4,4,bound);
-    my_lap.solver(8, 8, 0.001, 1000, "/Users/WC/Desktop/hc011775/Final project/Final project/solution.txt");
+    my_lap.solver(50, 80, 0.001, 10000, "/Users/WC/Desktop/hc011775/Final project/Final project/solution.d");
 }
 
