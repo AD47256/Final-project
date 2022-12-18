@@ -6,9 +6,29 @@
 //
 
 #include <iostream>
+#include "solver.hpp"
+using namespace std;
+
+struct boundary {
+    double up(double x, double y){
+        return 200.*x;
+    }
+
+    double lo(double x, double y){
+        return 0;
+    }
+
+    double le(double x, double y){
+        return 0;
+    }
+
+    double ri(double x, double y){
+        return 200.*y;
+    }
+}bound;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+    laplacian_solver<boundary> my_lap(0.5,0,0,0.5,bound);
+//    my_lap.solver(4, 4, 0.01, 50, "/Users/WC/Desktop/hc011775/Final project/Final project/sol.txt");
 }
+
