@@ -87,7 +87,7 @@ typedef int myint;
             ofstream solution;
             solution.open(output_file_name);
             solution << fixed;
-            for(myint i=m; i>=0; i--) {
+            for(myint i=0; i<=m; i++) {
                 for(myint j=0; j<=n; j++) {
                     solution << matrix[i][j] << ' ';
                 }

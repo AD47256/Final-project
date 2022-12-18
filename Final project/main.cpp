@@ -6,12 +6,13 @@
 //
 
 #include <iostream>
-#include "solver.hpp"
+#include <cmath>
+#include "solver.cpp"
 using namespace std;
 
 struct boundary {
     double up(double x, double y){
-        return 200.*x;
+        return cos(x)+7;
     }
 
     double lo(double x, double y){
@@ -23,12 +24,12 @@ struct boundary {
     }
 
     double ri(double x, double y){
-        return 200.*y;
+        return 0;
     }
 }bound;
 
 int main(int argc, const char * argv[]) {
-    laplacian_solver<boundary> my_lap(0.5,0,0,0.5,bound);
-//    my_lap.solver(4, 4, 0.01, 50, "/Users/WC/Desktop/hc011775/Final project/Final project/sol.txt");
+    laplacian_solver<boundary> my_lap(5,0,-4,4,bound);
+    my_lap.solver(8, 8, 0.001, 1000, "/Users/WC/Desktop/hc011775/Final project/Final project/solution.txt");
 }
 
